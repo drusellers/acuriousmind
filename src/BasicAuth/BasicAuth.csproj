@@ -16,4 +16,16 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".\README.md" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/drusellers/acuriousmind</PackageProjectUrl>
+    <Description>Provides a simple basic auth handler for ASP.Net</Description>
+    <IsPackable>True</IsPackable>
+  </PropertyGroup>
+
 </Project>

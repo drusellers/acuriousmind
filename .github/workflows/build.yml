@@ -1,0 +1,28 @@
+name: Build and Test
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: false # we have an i18n app and need to turn it on
+  DOTNET_SYSTEM_CONSOLE_ALLOW_ANSI_COLOR_REDIRECTION: '1' # Enable color output, even though the console output is redirected in Actions
+  TERM: xterm # Enable color output in GitHub Actions
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    name: Build and Test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8'
+      - name: Install Dependencies
+        run: |
+          dotnet restore ./ACuriousMind.sln
+      - name: Build
+        run: |
+          dotnet build ./ACuriousMind.sln -c Release --no-restore
+      - name: Tests
+        run: dotnet test ./ACuriousMind.sln -c Release --no-restore
