@@ -1,0 +1,6 @@
+#!/bin/bash
+
+VERSION=${1:-1.0.0}
+
+dotnet pack -p:PackageVersion=$VERSION -o ./out src/BasicAuth
+dotnet nuget push "./out/*.nupkg" --api-key "$NUGET_KEY" --source nuget.org

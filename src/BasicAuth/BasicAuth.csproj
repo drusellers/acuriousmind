@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ACuriousMind.BasicAuth</AssemblyName>
+    <RootNamespace>ACuriousMind.BasicAuth</RootNamespace>
+    <PackageId>ACuriousMind.BasicAuth</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dru Sellers</Authors>
+    <Company>A Curious Mind</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
